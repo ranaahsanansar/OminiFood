@@ -1,0 +1,675 @@
+/* --------------------------- */
+/* 
+
+Mehroon color : #652828
+orang color : #f58310
+font family : 'Lato' , 'Lobster' 
+
+
+*/
+
+/* --------------------------- */
+/* BASIC SETUP */
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+html {
+    background-color: #ffffff ;
+    color: #555;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+    
+}
+/* Yah floats ko khtm krny ky liya bani ha  */
+.clearfix {zoom: 1}
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* --------------------------- */
+/* Reuseable component */
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto 0 auto;
+}
+
+section {
+    padding: 80px 0px ;
+}
+
+/* --------------------------- */
+/* Setting Header and Text BOX with image */
+
+header {
+    
+    background-image: -webkit-gradient(linear , left top, left bottom , from(rgba(67, 3, 5, 0.62)) , to(rgba(33, 29, 29, 0.97)) ) , url(imgs/hero.jpg);
+    
+    background-image: linear-gradient(rgba(67, 3, 5, 0.62) , rgba(33, 29, 29, 0.97) ) , url(imgs/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-attachment: fixed;
+    
+}
+
+.hero-text-box {
+    position: absolute;
+    width: 1140px;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+/* ------------heading----------- */
+h1 , h2  {
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-transform: uppercase;  
+}
+
+h1 {
+    color: #ffffff ;
+    font-size: 240%;
+    margin-top: 0;
+    margin-bottom: 20px;
+    word-spacing: 4px;
+}
+
+h2 {
+    font-weight: 400;
+    word-spacing: 2px;
+    text-align: center;
+    font-size: 180% ;
+    margin-bottom: 30px;
+}
+
+h2:after {
+    display: block;
+    background-color: #652828 ;
+    height: 2px;
+    content: " ";
+    margin: 0 auto;
+    width: 500px;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 110%;
+    padding-bottom: 10px;
+}
+
+/* --------------------------- */
+/* Button Animation and desinging */
+
+.btn:link,
+.btn:visited,
+input[type=Submit]{
+    display: inline-block;
+    padding: 10px 30px; /* width or height auto ha */
+    font-weight: 300;
+    text-decoration: none ; /*Underline ko Khtm krny ky liya use howa ha */
+    border-radius: 200px; /*button ka Raduis set krny ky liya */
+    color: azure;
+    -webkit-transition: background-color 0.5s , border 0.5s , color 0.2s;
+    transition: background-color 0.5s , border 0.5s , color 0.2s;
+}
+
+
+.btn-full:link,
+.btn_full:visited,
+input[type=Submit]{
+    background-color: rgba(204, 49, 12, 0.71);
+    border: 1px solid rgba(204, 49, 12, 0.71); /* Dono Buttons ka size ik rkhny ky  liya r*/
+    margin-right: 5px;
+    
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid rgba(204, 49, 12, 0.71); /* 1 pixel solid line of color*/
+    color: rgba(204, 49, 12, 0.98);
+    
+}
+
+.btn:hover,
+.btn:active,
+input[type=Submit]:hover,
+input[type=Submit]:active{
+    background-color: #f58310 ;
+    font-family: 'Lobster', cursive;
+    border-color: #ff0000;
+    color: azure;
+}
+
+/* -------------------------------------------------------------------------------------------------------------------------------- */
+/* Logo and Navigation Styling  */
+
+.logo {
+    
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+    -webkit-transition: -webkit-transform 0.10s;
+    transition: -webkit-transform 0.10s;
+    transition: transform 0.10s;
+    transition: transform 0.10s, -webkit-transform 0.10s;
+}
+
+.logo-black { 
+    display: none;
+    height: 50px;
+    width: auto;
+    float: left;
+    margin: 5px 0;
+}
+
+.logo:hover,
+.logo:active {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    
+}
+
+/* Navigation main ---------------------------------------------------------------------------------------------------------*/
+
+.main-nav {
+    
+    float: right ;
+    list-style: none;
+    margin-top: 55px;
+    
+}
+
+.main-nav li {
+    
+    display: inline-block; 
+    margin-right: 40px;
+    
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px  0;
+    color: azure;
+    text-decoration: none;
+    font-size: 90%;
+    border-bottom : 2px solid transparent ;
+    -webkit-transition: border-bottom 0.5s , font-size 0.5s , font-family 0.5s ;
+    transition: border-bottom 0.5s , font-size 0.5s , color 0.5s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom : 2px solid #ceb707;
+    color:rgb(1, 224, 187);
+}
+
+/* sticky navi --------------------------------------------------------------------------------------------------------------------*/
+.sticky {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    top: 0;
+    left: 0;
+    -webkit-box-shadow: 0 5px 5px #b2b2b2 ;
+    box-shadow: 0 2px 2px #b2b2b2 ;
+    z-index: 9999; /* heighest stack value on the top */ 
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+    padding: 15px  0;
+    color: #555;
+}
+
+.sticky .main-nav {
+    margin-top: 15px;
+    color: aqua;
+    
+}
+
+.sticky .logo {
+    display: none;
+}
+.sticky .logo-black {
+    display: block;
+}
+
+/*  building the feature section +++++++++---------------------------------------------------------------- */
+
+.long-copy {
+    text-align: center;
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 30px;
+    line-height: 140%;
+}
+
+.box p {
+    font-size: 90%;
+    line-height: 140%;
+}
+
+.box {
+    padding: 2%;
+}
+
+/* Icon settings */
+
+.box ion-icon  {
+    font-size: 300% ;
+    display: block;
+    color: #f58310 ;
+    margin-bottom: 10px;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+
+
+/* Section 3 Image */
+/* Editing by ME 
+.photo {
+    height: 200px;
+}
+
+.photo:hover,
+.photo:active{
+    height: 220px;
+    
+}
+*/
+
+/* ---------------------------------------------*/
+
+/* ------------------- Section 3 Images ---------- */
+
+.section-meal {
+    padding: 0;
+}
+
+.meals-pic {
+    list-style: none;
+    width: 100%;
+}
+
+.meals-pic li {
+    display: block;
+    float: left;
+    width: 25%; /* Total 100 hain hamny 4 pics dekhani hain to 4 sy divide kry gy */
+    background-color: #000 ;
+    
+    
+}
+
+.meal-photo {
+    width: 100%;
+    margin: 0;
+    overflow: hidden; /* contaner ky bahir ka part hide krny ky  liya */
+}
+
+
+
+.meal-photo img {
+    width: 100%;
+    height: auto;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15); /* pic ko contaner main hi zoom krny ki liya */
+    -webkit-transition: opacity 0.5s , -webkit-transform 0.3s;
+    transition: opacity 0.5s , -webkit-transform 0.3s;
+    transition: transform 0.3s , opacity 0.5s ;
+    transition: transform 0.3s , opacity 0.5s , -webkit-transform 0.3s;
+    opacity: 0.7;  
+}
+
+.meal-photo img:hover {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+    opacity: 0.3;
+    
+}
+
+
+/* -----------------------Section 4th How its work or app buttoons-----------*/ 
+
+.Working {
+    background-color: #e6ebeb;
+}
+
+.step-box {
+    margin: 5px;
+}
+
+
+/* Very USefull Selector */
+.step-box:first-child {
+    text-align: right; /* Thhis work for all Inline elements text and pics of block  */
+    padding-right: 3%;
+    
+} 
+.step-box:last-child {
+    padding-left: 3%;
+    margin-top: 35px;
+} 
+
+.app-pic {
+    width: 30%;
+    -webkit-transition: -webkit-transform 0.5s;
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+.app-pic:hover {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.points {
+    margin-bottom: 50px;
+}
+
+.points div:last-of-type {
+    margin-bottom: 40px;
+}
+
+.points div {
+    color: #f58310 ;
+    border: 2px solid #f58310 ;
+    display: inline-block;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    float: left;
+    font-size: 150% ;
+    
+}
+.points div:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    font-family: 'Lobster' ;
+}
+
+.btn-app img {
+    margin-left: 10px;
+    height: 60px;
+}
+
+.phini {
+    -webkit-transition: color 0.5s ;
+    transition: color 0.5s ; font-family: Arial ;
+}
+
+.phini:hover {
+    font-family: 'Lobster' ;
+    color: forestgreen;
+}
+
+/* -----------Section 5th cities section ------------ */
+
+.city-col {
+   margin-top: 40px;
+}
+
+.city-details {
+    margin-bottom: 20px;  
+}
+
+.city-details:last-of-type {
+    text-decoration: underline;
+}
+
+.city-details ion-icon {
+    font-size: 120%;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 120%;
+    vertical-align: middle;
+}
+
+.city-details ion-icon:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.city-col img {
+    display: block;
+    width: 100%;
+    height: 170px ;
+    overflow: hidden;
+}
+
+.city-col img:hover {
+   opacity: 80%
+    
+}
+
+
+/*---------------------SEction 6th Coustumers Comments ---------*/
+
+.costumer-section  {
+    background-image: -webkit-gradient(linear , left top, left bottom , from(rgba(0, 0, 0, 0.81)) , to(rgba(0, 0, 0, 0.78))) , url(imgs/back-customers.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.81) , rgba(0, 0, 0, 0.78)) , url(imgs/back-customers.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+blockquote {
+    font-style: italic;
+    line-height: 150%;
+    padding: 2px;
+    margin-bottom: 25px;
+    position: relative;
+    margin-top: 12px;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+
+cite img {
+    border-radius: 50%;
+    height: 60px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+blockquote:before {
+    content: "\201C" ;
+    font-size: 400%;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -3px;
+}
+
+/*-----------Section no 6th Sing-Up-----*/
+/*--------------------------------------*/
+
+.section-plans {
+    background-color: #dedede;
+}
+
+.plan-box {
+    line-height: 38px;
+    border-radius: 15px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    -webkit-box-shadow: 0 2px 9px #c7c7c7 ;
+    box-shadow: 0 2px 9px #c7c7c7 ; /* x-axis y-axis blur color */
+}
+
+.plan-box div {
+    padding: 9px;
+}
+
+
+
+.plan-box div:last-child {
+    text-align: center;
+}
+
+.plan-box div:first-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.head-division {
+    background-color: #efefef;
+    padding-left: 10px;
+    
+}
+
+.plan-price {
+    font-size: 50px;
+    color: #f58310;
+    font-family: 'Lato';
+    font-weight: 300;
+}
+
+.meal-price {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cheks-box {
+    font-size: 17px;
+    background-color: white;
+    
+}
+
+.cheks-box ul {
+    list-style: none;
+    border-bottom: 1px solid #e3e3e3 ;
+}
+
+.cheks-box ion-icon {
+    color: #f58310 ;
+}
+
+.btn-back  {
+    background-color: white;
+}
+
+/*---------------------------------*/
+/* -------    seCTION FORM    ----------------*/
+
+
+.contact_form {
+    width: 60%;
+    margin: 0 auto; /* Center main krny ky liya */
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    border-radius: 6px;
+    padding: 3px;
+    border: 2px solid #ccc;
+}
+
+input[type=checkbox] {
+    margin: 10px 5px 10px 0;
+}
+
+*:focus {outline: none;}
+
+/* ------------ Footer -----------*/
+/*--------------------------------*/
+
+footer {
+    background-color:  #3e3e3e ;
+    padding: 50px;
+}
+
+.social-links {
+    list-style: none ;
+    float: right;
+}
+
+.footer-nav {
+    list-style: none ;
+    float: left;
+}
+
+
+.footer-nav li,
+.social-links li
+{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child
+{
+    margin-right: 0;
+}
+
+.footer-nav li a:link ,
+.social-links li a:link ,
+.footer-nav li a:visited ,
+.social-links li a:visited 
+{
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
+}
+
+.footer-nav li a:active ,
+.footer-nav li a:hover  {
+    color: #e6e6e6 ;
+}
+
+footer p {
+    color: #888 ;
+    text-align: center;
+    font-size: 90%;
+    margin-top: 30px;
+}
+
+.social-links ion-icon{
+    font-size: 150% ;
+    -webkit-transition: color 0.5s , -webkit-transform 0.5s;
+    transition: color 0.5s , -webkit-transform 0.5s;
+    transition: color 0.5s , transform 0.5s ;
+    transition: color 0.5s , transform 0.5s , -webkit-transform 0.5s;
+}
+
+.social-links ion-icon:hover,
+.social-links ion-icon:active
+{
+    color: #157d8b ;
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+}
